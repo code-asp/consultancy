@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRACE Consultancy - Verdura Pitch</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Configure Tailwind to use Inter Font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-accent': '#38BDF8', // New light blue accent
+                        'brand-text-light': '#E0F2FE', // New light blue-white text
+                        'brand-dark': '#1E3A8A', // New deep blue
+                        'brand-darker': '#172554', // New midnight blue
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        /* This style block allows for custom CSS while keeping it in one file */
+        body {
+            /* Smooth scrolling for anchor links */
+            scroll-behavior: smooth;
+        }
+        .text-glow {
+            /* A stronger glow for key headings - Updated to blue */
+            text-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+        }
+        .card-hover {
+            /* A subtle lift effect for cards */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* --- New Hover Glows for Cards --- */
+        .card-hover.border-red-500:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 0 20px rgba(239, 68, 68, 0.3);
+        }
+        .card-hover.border-yellow-500:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 0 20px rgba(234, 179, 8, 0.3);
+        }
+        /* Updated to blue */
+        .card-hover.border-brand-accent:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 0 20px rgba(56, 189, 248, 0.3);
+        }
+
+        /* --- New Glassmorphism Class --- */
+        .glass-card {
+            background-color: rgba(23, 37, 84, 0.5); /* Semi-transparent version of brand-darker */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* --- New Fade-in-Up Animation --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Utility class to apply the animation */
+        .animate-fade-in-up {
+            /* Set initial state for animation */
+            opacity: 0; 
+            animation: fadeInUp 0.7s ease-out forwards;
+        }
+
+        /* --- New Pulse Animation for CTA --- */
+        @keyframes pulseGlow {
+            0%, 100% {
+                /* Updated to blue */
+                box-shadow: 0 0 15px rgba(56, 189, 248, 0.4), 0 0 2px rgba(56, 189, 248, 0.8);
+            }
+            50% {
+                /* Updated to blue */
+                box-shadow: 0 0 25px rgba(56, 189, 248, 0.7), 0 0 5px rgba(56, 189, 248, 1);
+            }
+        }
+        
+        .animate-pulse-glow {
+            animation: pulseGlow 2.5s infinite ease-in-out;
+        }
+
+    </style>
+</head>
+<!-- Updated background gradient and text color -->
+<body class="bg-gradient-to-br from-brand-darker to-brand-dark font-sans text-brand-text-light antialiased">
+
+    <!-- 
+      This is the main wrapper for the entire "poster" content.
+/* ... existing code ... -->
+    <div class="min-h-screen w-full p-4 sm:p-8 md:p-12 flex items-center justify-center">
+        
+        <!-- Updated background color and added blur -->
+        <div class="w-full max-w-7xl bg-brand-dark/70 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden ring-1 ring-white/10">
+            
+            <!-- ====== 1. HEADER SECTION ====== -->
+            <!-- Added animation class -->
+            <header class="p-6 md:p-10 border-b border-white/10 animate-fade-in-up">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <h1 class="text-3xl md:text-4xl font-extrabold text-white text-glow">VERDURA FASHION LTD.</h1>
+                        <!-- Updated text color -->
+                        <p class="text-lg md:text-xl text-brand-accent font-medium">Greenwashing or Growth: A Path to Unbreakable Trust</p>
+                    </div>
+                    <div class="flex-shrink-0 rounded-lg border border-white/10 px-4 py-2 text-center">
+                        <span class="text-xl font-bold tracking-widest text-white">TRACE</span>
+                        <!-- Updated text color -->
+                        <span class="block text-xs font-medium text-brand-accent uppercase">Consultancy</span>
+                    </div>
+                </div>
+            </header>
+
+            <main class="p-6 md:p-10">
+
+                <!-- ====== 2. DIAGNOSIS & CONTEXT SECTION ====== -->
+                <!-- Added animation class and stagger delay -->
+                <section id="diagnosis" class="mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <h2 class="text-2xl font-bold text-white mb-6">1. The Diagnosis: A Crisis of Trust</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <!-- The Crisis Card -->
+                        <!-- Updated background color to glass-card -->
+                        <div class="glass-card p-6 rounded-lg ring-1 ring-white/10">
+                            <div class="flex items-center gap-3 mb-3">
+                                <svg class="w-6 h-6 text-red-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" /></svg>
+                                <h3 class="text-xl font-semibold text-white">The Crisis: A Brand Divided</h3>
+                            </div>
+                            <!-- Updated text color -->
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Public <strong>Greenwashing</strong> Backlash & Boycotts</li>
+                                <li>3 Major Retailers Paused All Orders</li>
+                                <li>Customer Disillusionment & Broken Trust</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- The Problem Card -->
+                        <!-- Updated background color to glass-card -->
+                        <div class="glass-card p-6 rounded-lg ring-1 ring-white/10">
+                            <div class="flex items-center gap-3 mb-3">
+                                <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m3.3-3.3 1.757-1.757a4.5 4.5 0 0 1 6.364 6.364l-4.5 4.5a4.5 4.5 0 0 1-1.242-7.244" /></svg>
+                                <h3 class="text-xl font-semibold text-white">The Problem: A Broken Promise</h3>
+                            </div>
+                            <!-- Updated text color -->
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Claim: <strong>100% Recycled</strong> vs. Reality: <strong>60% Verified</strong></li>
+                                <li>Critical Lack of Supply Chain Traceability</li>
+                                <li>Siloed Teams (Marketing vs. Operations)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- BANI Section -->
+                    <h3 class="text-lg font-semibold text-white mb-4">Navigating Your BANI Environment</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <!-- Updated background and text colors -->
+                        <div class="text-center p-4 glass-card rounded-lg ring-1 ring-white/10">
+                            <h4 class="font-bold text-white">Brittle</h4>
+                            <p class="text-sm text-gray-400">Reputation shattered on a fragile claim.</p>
+                        </div>
+                        <div class="text-center p-4 glass-card rounded-lg ring-1 ring-white/10">
+                            <h4 class="font-bold text-white">Anxious</h4>
+                            <p class="text-sm text-gray-400"><strong>URGENT</strong> response, fear-driven decisions.</p>
+                        </div>
+                        <div class="text-center p-4 glass-card rounded-lg ring-1 ring-white/10">
+                            <h4 class="font-bold text-white">Nonlinear</h4>
+                            <p class="text-sm text-gray-400">Disproportionate backlash to a partial error.</p>
+                        </div>
+                        <div class="text-center p-4 glass-card rounded-lg ring-1 ring-white/10">
+                            <h4 class="font-bold text-white">Incomprehensible</h4>
+                            <p class="text-sm text-gray-400">Failure to see that partial credit is failure.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <hr class="border-white/10 my-10">
+
+                <!-- ====== 3. THE ROADMAP SECTION ====== -->
+                <!-- Added animation class and stagger delay -->
+                <section id="roadmap" class="animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <h2 class="text-2xl font-bold text-white mb-6 text-center">2. The TRACE Solution: A 3-Phase Roadmap to Trust</h2>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Phase 1 Card -->
+                        <!-- Updated background color to glass-card -->
+                        <div class="glass-card p-6 rounded-lg ring-1 ring-white/10 border-t-4 border-red-500 card-hover">
+                            <div class="flex items-center gap-3 mb-3">
+                                <svg class="w-8 h-8 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636" /></svg>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white">Phase 1: Stop the Bleeding</h3>
+                                    <p class="text-sm font-medium text-red-400">Days 1 - 30</p>
+                                </div>
+                            </div>
+                            <!-- Updated text color -->
+                            <ul class="list-disc list-inside text-gray-300 space-y-1 mt-4">
+                                <li>Immediate Campaign Pause</li>
+                                <li>Radical Transparency Statement</li>
+                                <li>Engage Directly with Influencers</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Phase 2 Card -->
+                        <!-- Updated background color to glass-card -->
+                        <div class="glass-card p-6 rounded-lg ring-1 ring-white/10 border-t-4 border-yellow-500 card-hover">
+                            <div class="flex items-center gap-3 mb-3">
+                                <svg class="w-8 h-8 text-yellow-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" /></svg>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white">Phase 2: Rebuild Foundation</h3>
+                                    <p class="text-sm font-medium text-yellow-400">Months 2 - 6</p>
+                                </div>
+                            </div>
+                            <!-- Updated text color -->
+                            <ul class="list-disc list-inside text-gray-300 space-y-1 mt-4">
+                                <li>Independent Supply Chain Audit</li>
+                                <li>Implement Material Traceability Tech</li>
+                                <li>Re-engage Retailers with Hard Data</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Phase 3 Card -->
+                        <!-- Updated background, border, and text colors -->
+                        <div class="glass-card p-6 rounded-lg ring-1 ring-white/10 border-t-4 border-brand-accent card-hover">
+                            <div class="flex items-center gap-3 mb-3">
+                                <svg class="w-8 h-8 text-brand-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" /></svg>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white">Phase 3: Lead the Pack</h3>
+                                    <p class="text-sm font-medium text-brand-accent">Months 6 - 12+</p>
+                                </div>
+                            </div>
+                            <!-- Updated text color -->
+                            <ul class="list-disc list-inside text-gray-300 space-y-1 mt-4">
+                                <li>Develop Circular Economy Strategy</li>
+                                <li>Integrate Marketing & Ops (Silos -> Pods)</li>
+                                <li>Launch Public Traceability Map</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <hr class="border-white/10 my-10">
+
+                <!-- ====== 4. THE IMPACT SECTION ====== -->
+                <!-- Added animation class and stagger delay -->
+                <section id="impact" class="mb-10 animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <h2 class="text-2xl font-bold text-white mb-6">3. The Impact: Innovation & Resilience</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Innovation Card -->
+                        <!-- Updated background and text colors -->
+                        <div class="glass-card p-6 rounded-lg ring-1 ring-white/10">
+                            <div class="flex items-center gap-3 mb-3">
+                                <svg class="w-6 h-6 text-brand-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3 7.482a7.49 7.49 0 0 1-3 0m3 0a7.49 7.49 0 0 0-3 0m.34 2.057a7.49 7.49 0 0 1-3 0m3 0a7.49 7.49 0 0 0-3 0m.34-2.057a7.49 7.49 0 0 1-3 0m3 0a7.49 7.49 0 0 0-3 0m3.837-4.602a6.01 6.01 0 0 1-3 0m3 0a6.01 6.01 0 0 0-3 0m.34 2.057a7.49 7.49 0 0 1-3 0m3 0a7.49 7.49 0 0 0-3 0m.34-2.057a7.49 7.49 0 0 1-3 0m3 0a7.49 7.49 0 0 0-3 0m3.837-4.602a6.01 6.01 0 0 1-3 0m3 0a6.01 6.01 0 0 0-3 0m.34 2.057a7.49 7.49 0 0 1-3 0m3 0a7.49 7.49 0 0 0-3 0" /></svg>
+                                <h3 class="text-xl font-semibold text-white">Innovation: Provable Ethics</h3>
+                            </div>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Move from vague claims to <strong>data-led facts</strong>.</li>
+                                <li>Turn vocal critics into paid <strong>advisors</strong>.</li>
+                                <li>Launch a <strong>public-facing traceability map</strong> as a new marketing tool.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Resilience Card -->
+                        <!-- Updated background and text colors -->
+                        <div class="glass-card p-6 rounded-lg ring-1 ring-white/10">
+                            <div class="flex items-center gap-3 mb-3">
+                                <svg class="w-6 h-6 text-brand-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.333 9-6.03 9-11.623 0-1.306-.368-2.514-.998-3.598A11.959 11.959 0 0 1 12 2.714Z" /></svg>
+                                <h3 class="text-xl font-semibold text-white">Resilience: Unbreakable Trust</h3>
+                            </div>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Marketing slogans are <strong>brittle</strong>.</li>
+                                <li>Verifiable transparency is <strong>resilient</strong>.</li>
+                                <li>Build an <strong>"un-cancellable" brand</strong> loyalty based on true authenticity.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <hr class="border-white/10 my-10">
+
+                <!-- ====== 5. CALL TO ACTION SECTION ====== -->
+                <!-- Added animation class and stagger delay -->
+                <section id="cta" class="text-center animate-fade-in-up" style="animation-delay: 0.8s;">
+                    <h2 class="text-3xl font-bold text-white mb-4 text-glow">Let's Walk the Talk.</h2>
+                    <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">This isn't about saving one campaign. It's about building the next 10 years of Verdura. We are ready to partner with you to begin Phase 1.</p>
+                    <!-- Updated button colors -->
+                    <a href="#" class="inline-block bg-brand-accent text-brand-darker font-bold text-lg px-10 py-4 rounded-lg shadow-lg hover:bg-sky-400 transition-all duration-300 transform hover:scale-105 animate-pulse-glow">
+                        Schedule a Deep-Dive Workshop
+                    </a>
+                </section>
+
+            </main>
+
+            <!-- Footer -->
+            <!-- Updated background color -->
+            <footer class="glass-card text-center border-t border-white/10 p-6">
+                <p class="text-sm text-gray-400">&copy; 2025 TRACE Consultancy Aston London Campus. All Rights Reserved.</p>
+            </footer>
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+
